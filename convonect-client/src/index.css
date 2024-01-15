@@ -1,0 +1,21 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #313338;
+    color: black;
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
