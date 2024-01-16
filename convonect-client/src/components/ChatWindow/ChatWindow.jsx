@@ -14,22 +14,22 @@ export const ChatWindow = () => {
             type="text"
             id="name-input"
             className="name-input"
-            value= "anonymous"
-            maxlength="20"
+            placeholder= "anonymous"
+            maxLength="20"
           />
         </div>
 
         <ul className="message-container" id="message-container">
         <li className="message-left">
           <p className="message">
-            lorem impsun
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum quidem a aliquam asperiores dignissimos quos cupiditate, quas similique provident, nihil temporibus quis molestias dolorem ipsum! Voluptatum rerum itaque similique? Vitae.
             <span> bluebird ● 26 July 10:40</span>
           </p>
         </li>
 
         <li className="message-right">
           <p className="message">
-            lorem impsun
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum nostrum ratione modi corrupti veniam expedita repellendus temporibus fuga vero molestiae eaque, quis, animi ducimus consequatur cupiditate accusamus beatae fugit. Odit?
             <span> bluebird ● 26 July 10:40</span>
           </p>
         </li>
@@ -41,7 +41,7 @@ export const ChatWindow = () => {
 
       <form className="message-form">
         <input type="text" name="message" className="user-message" id="user-message" />
-        <div class="vert-divider" />
+        <div className="vert-divider" />
         <button type="submit" className="send-button"><IoMdSend /></button>
       </form>
       </div>

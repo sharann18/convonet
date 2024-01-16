@@ -14,3 +14,19 @@
   margin: 15px 0;
   color: #7e7e7e;
 }
+
+.leave-button {
+  width: 65px;
+  height: 40px;
+  background-color: aliceblue;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 15px;
+  margin-bottom: 12px;
+}
+
+.leave-button:hover {
+  background-color: rgba(0, 0, 0, 0.567);
+  color: white;
+}
