@@ -2,7 +2,10 @@ import { ChatWindow } from "./components/ChatWindow/ChatWindow";
 import { JoinWindow } from "./components/JoinWindow/JoinWindow";
 import { useContext } from "react";
 import { AuthContext } from "./context/authContext";
+import { io } from 'socket.io-client';
 import "./App.css"
+
+const socket = io.connect("http://localhost:3000"); //establish websocket connection to server
 
 function App() {
 
