@@ -7,7 +7,7 @@ export const JoinWindow = () => {
   return (
     <div className='join-window'>
             <input type="text" className='join-name-input' placeholder="What do you want others to call you?"/>
-            <input type="text" className='join-passkey-input' placeholder="Enter the passkey"/>
+            <input type="password" className='join-passkey-input' placeholder="Enter the passkey"/>
             <button className='join-button' onClick={join}>Join</button>
     </div>
   )

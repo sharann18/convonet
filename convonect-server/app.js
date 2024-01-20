@@ -21,8 +21,18 @@ app.get('/', (req, res) => {
     res.send("hello world");
 });
 
+let socketsConnected = new Set();
+
 io.on("connection", (socket) => {
-    console.log(`user connected: ${socket.id}`)
+    console.log(`user connected: ${socket.id}`);
+    socketsConnected.add(socket.id);
+    io.emit('total-clients', socketsConnected.size);
+
+    socket.on("disconnect", () => {
+        console.log(`user ${socket.id} disconnected`);
+        socketsConnected.delete(socket.id);
+        io.emit('total-clients', socketsConnected.size);
+    })
 });
 
 server.listen(PORT, () => console.log(`💬 server on port ${PORT}`));

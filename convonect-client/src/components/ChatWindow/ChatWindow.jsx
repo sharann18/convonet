@@ -1,7 +1,6 @@
 import React, { useRef } from "react";
 import { IoMdSend } from 'react-icons/io'
 import { FaUserAlt } from "react-icons/fa";
-
 import "./ChatWindow.css";
 
 export const ChatWindow = () => {

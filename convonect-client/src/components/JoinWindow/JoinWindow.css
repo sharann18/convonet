@@ -14,9 +14,9 @@
 
 .join-window > input {
     height: 40px;
-    width: 250px;
+    width: 280px;
     font-size: 14px;
-    padding-left: 2px;
+    padding-left: 8px;
 }
 
 .join-window > button {

@@ -1,15 +1,22 @@
 import { ChatWindow } from "./components/ChatWindow/ChatWindow";
 import { JoinWindow } from "./components/JoinWindow/JoinWindow";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "./context/authContext";
-import { io } from 'socket.io-client';
 import "./App.css"
-
-const socket = io.connect("http://localhost:3000"); //establish websocket connection to server
 
 function App() {
 
-  const { currUser, leave } = useContext(AuthContext);
+  const { socket, currUser, leave } = useContext(AuthContext);
+  
+  const [numberOfUsers, setnumberOfUsers] = useState(0);
+
+
+  if(socket) {
+    socket.on('total-clients', (data) => {
+      console.log(data);
+      setnumberOfUsers(data);
+    })
+  }
 
   
   return (
@@ -25,7 +32,7 @@ function App() {
       ? <>
           <button className="leave-button" onClick={leave}>Leave</button>
           <ChatWindow />
-          <h4 id="total-users">Total users: 3</h4>
+          <h4 id="total-users">Total users: {numberOfUsers}</h4>
         </>
       : <JoinWindow />}
     </div>
