@@ -1,5 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import { io } from 'socket.io-client';
+import { v4 as uuidv4 } from 'uuid';
 
 export const AuthContext = createContext();
 
@@ -16,10 +17,12 @@ export const AuthContextProvider = ({ children }) => {
 
 
 
-    const join = () => {
+    const join = (username) => {
+        const userId = uuidv4();
+        
         setCurrUser({
-          id: 1,
-          name: "John Doe",
+          id: userId,
+          name: username,
         });
 
         const newSocket = io.connect("http://localhost:3000"); //establish websocket connection to server

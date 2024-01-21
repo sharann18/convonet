@@ -33,6 +33,11 @@ io.on("connection", (socket) => {
         socketsConnected.delete(socket.id);
         io.emit('total-clients', socketsConnected.size);
     })
+
+    socket.on("message", (data) => {
+        console.log(data);
+        socket.broadcast.emit("chat-message", data);
+    })
 });
 
 server.listen(PORT, () => console.log(`💬 server on port ${PORT}`));
